@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+@font-face{
+    font-family: Cyberpunk;
+    src:url("Cyberpunk.ttf");
+}
+
+
+
+:root {
+
+    --red-scanline: rgba(204, 94, 98, 0.2);
+    --black-scanline: rgba(1, 1, 1, 0.9);
+    --yellow: #f7f500;
+    --text-shadow: rgb(0, 208, 255);
+    --red: rgba(211, 87, 91, 0.81);
+    --red-glow: rgba(211, 87, 91, 0.91);
+    --blue:#61e4fa;
+    --black-hover-background:rgba(0,0,0,0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;   
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 100px 150px;
+}
+.cpbg {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.cp{
+    position: absolute;
+    bottom:0;
+    left:300px;
+    top:40px;
+    z-index: 9;
+}
+.cpV{
+    position: absolute;
+    bottom:0;
+    left:500px;
+    top:160px;
+    height: 85%;
+}
+
+.menu {
+    border-radius: 8px;
+    margin-left: 100px;
+    margin-top: 180px;
+    width: 400px;
+    height: 500px;
+    display: inline-block;
+    z-index: 10;
+    clip-path:polygon(399px -1px, 400px 439px, 356px 484px, 2px 486px, 0px 0px);
+
+    background: repeating-linear-gradient(to bottom,
+            transparent 0%,
+            var(--red-scanline) 1px,
+            var(--red-scanline) 4px,
+            var(--red-scanline) 5px,
+            transparent 0.5%),
+        repeating-linear-gradient(to left,
+            var(--black-scanline),
+            var(--black-scanline) 100%);
+}
+
+
+
+
+.logo {
+    font-family: "Cyberpunk";
+    color: var(--yellow);
+    font-size: 42px;
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: var(--text-shadow) 2px 3px 0px;
+    
+    padding: 25px 0;
+}
+
+.sublogo {
+    font-family: 'Squada One', cursive;
+    font-size: 24px;
+    color: var(--text-shadow);
+    text-shadow: none;
+    text-align: right;
+    letter-spacing: 25px;
+    padding-right: 15px;
+}
+
+.menu li {
+    list-style: none;
+    padding: 0px 25px;
+}
+
+.menu ul li {
+    text-transform: uppercase;
+    cursor: pointer;
+
+
+    position: relative;
+    padding: 10px;
+    margin:15px 0px;
+    width:350px;
+    height: 54.4px;
+    clip-path:polygon(350px 0px,350px 29px,322px 57px,0px 57px,0px 0px);
+
+    font-family: 'Squada One', cursive;
+    color: var(--red);
+    font-size: 26px;
+    text-shadow: 0px 0px 3px var(--red-glow);
+
+    border-style: solid;
+    border-width:2px;
+    border-color: transparent;    
+
+
+    transition: color 1s linear;
+    transition: border-color 1s linear;
+
+
+}
+
+.menu ul li:hover,
+.menu ul li:hover::after{
+    color:var(--blue);
+    border-color: var(--blue);
+
+    transition: color 0.23s linear;
+    transition: border-color 0.23s linear;
+
+    background: var(--black-hover-background);
+}
+
+.menu ul li::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+
+    right:-17px;
+    bottom:-17px;
+    transform: rotate(45deg);
+
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+
+    transition: color 1s linear;
+    transition: border-color 1s linear;
+}
+
+
+
+
+.modal{
+
+    font-family: 'Squada One', cursive;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top:0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    z-index: 20;
+}
+
+.modal{
+    display: none;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal-content{
+    margin-left: 150px;
+    margin-top: 150px;
+
+
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow:0 22px 4px rgba(0,0,0,0.2);
+    text-shadow: 0px 0px 3px var(--red-glow);
+    z-index: 21;
+}
+
+.modal .heading{
+    margin: 0;
+    font-size: 40px;
+    font-family: "Cyberpunk";
+    color: var(--yellow);
+    text-shadow: var(--text-shadow) 2px 3px 0px;
+}
+
+.modal p{
+    opacity: 0.7;
+    font-size: 23px;
+    color: var(--red);
+    text-shadow: 0px 0px 3px var(--red-glow);
+
+}
+
+.modal p:hover,
+.modal p:hover,.modal .closebtn:hover,
+.modal .closebtn:hover::after{
+    color:var(--blue);
+    border-color: var(--blue);
+
+    transition: color 0.23s linear;
+    transition: border-color 0.23s linear;
+
+    background: var(--black-hover-background);
+}
+
+.closebtn{
+    font-family: 'Squada One', cursive;
+    font-size: 26px;
+    text-transform: uppercase;
+    cursor:pointer;
+    color: var(--red);
+    background: rgba(0,0,0,0.2);
+    border: 0;
+    padding: 10px 25px;
+    box-shadow:0 22px 4px rgba(0,0,0,0.2);
+    text-shadow: 0px 0px 3px var(--red-glow);
+    clip-path:polygon(350px 0px,350px 29px,322px 57px,0px 57px,0px 0px);
+}
+
+
+audio{
+    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+    width: 200px;
+    height: 25px;
+}
+
+.bgaudio{
+    position: relative;
+    margin-bottom: -67%;
+    z-index: 40;
+}
+
+h5{
+    padding-left: 25px;
+    font-size: 12px;
+    font-family: 'Cyberpunk';
+    color: var(--red);
+    text-shadow: var(--text-shadow) 2px 3px 0px;
+}

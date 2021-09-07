@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section class="homepage">
+        <img src="cpbg.jpg" class="cpbg">
+        <img src="cp.png" class="cp">
+        <img src="cpV.png" class="cpV">
+        <div class="menu">
+            <div class="logo">CYBERPUNK <div class="sublogo">2077</div>
+            </div>
+            <ul>
+                <li><a href="#" id="plot" data-toggle="modal" data-target="#modal_container">Plot</a></li>
+                <li><a id="buy" href="https://www.cyberpunk.net/in/en/">Buy Now</a></li>
+                <li><a id="guest" href="https://bit.ly/2WQdaa7">Special Appearences</a></li>
+                <li><a id="req" href="https://bit.ly/3BKhyqm">Requirements</a></li>
+                <h5>CREDITS@CD PROJEKT RED</h5>
+            </ul>
+        </div>
+        <audio class="bgaudio" controls><source src="cyberpunk.mp3" type="audio/mpeg"></audio>
+    </section>
+
+    <div class="modal">
+        <div class="modal-content" id="modal_container">
+            <div class="heading">NIGHT CITY CHANGES EVERY BODY</div>
+            <p>Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with
+                power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind
+                implant that is the key to immortality. You can customize your character’s cyberware, skillset and
+                playstyle, and explore a vast city where the choices you make shape the story and the world around you.
+            </p>
+            <audio controls loop><source src="voicetts.mp3" type="audio/mpeg"></audio><br>
+            <button id="close" class="closebtn">Close</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
